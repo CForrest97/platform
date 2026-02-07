@@ -25,7 +25,7 @@ module "github_oidc" {
   role_name = "github-actions-infra-role"
 
   role_policy_arns = [
-    "arn:aws:iam::aws:policy/PowerUserAccess"
+    "arn:aws:iam::aws:policy/AdministratorAccess"
   ]
 
   tags = local.common_tags
