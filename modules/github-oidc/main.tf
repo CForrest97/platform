@@ -53,7 +53,7 @@ resource "aws_iam_role" "github_actions" {
 }
 
 resource "aws_iam_role_policy_attachment" "github_actions" {
-  for_each = toset(var.role_policy_arns)
+  for_each = toset(["arn:aws:iam::aws:policy/AdministratorAccess"])
 
   role       = aws_iam_role.github_actions.name
   policy_arn = each.value

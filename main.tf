@@ -11,7 +11,7 @@ locals {
 }
 
 module "state" {
-  source = "./modules/state"
+  source         = "./modules/state"
   aws_account_id = var.aws_account_id
 }
 
@@ -19,14 +19,10 @@ module "github_oidc" {
   source = "./modules/github-oidc"
 
   github_repositories = [
-    "repo:CForrest97/platform:ref:refs/heads/main",
+    "repo:CForrest97/platform:*",
   ]
 
   role_name = "github-actions-infra-role"
-  
-  role_policy_arns = [
-    "arn:aws:iam::aws:policy/PowerUserAccess"
-  ]
 
   tags = local.common_tags
 }

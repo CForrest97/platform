@@ -9,12 +9,6 @@ variable "role_name" {
   default     = "github-actions-role"
 }
 
-variable "role_policy_arns" {
-  description = "List of IAM policy ARNs to attach to the role"
-  type        = list(string)
-  default     = []
-}
-
 variable "tags" {
   description = "Tags to apply to resources"
   type        = map(string)
