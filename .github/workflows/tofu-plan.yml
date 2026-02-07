@@ -27,6 +27,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Debug GitHub context
+        run: |
+          echo "repo=$GITHUB_REPOSITORY"
+          echo "ref=$GITHUB_REF"
+          echo "event=$GITHUB_EVENT_NAME"
+          echo "actor=$GITHUB_ACTOR"
+          echo "workflow_ref=$GITHUB_WORKFLOW_REF"
+
       - name: Setup OpenTofu
         uses: opentofu/setup-opentofu@v1
         with:
