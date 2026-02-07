@@ -108,7 +108,6 @@ Configure organizational units and accounts in [main.tf](main.tf):
 ```hcl
 module "organization" {
   source            = "./modules/organization"
-  organization_name = var.organization_name
 
   organizational_units = {
     "workloads" = {}
